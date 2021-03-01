@@ -6,14 +6,12 @@ void sortString(char *s[], int count);
 void printArray(char *s[], int count);
 void swapStrings(char** a, char** b);
 int main(){
-
-        int i;
+    int i;
         char buff[BUFSIZ];
-
-        int count;
+        int count = 0;
        // 's' is a pointer to a char pointer, initially 's' is allocated storage for one char pointer
-        char** s= malloc(sizeof(char*));
-        
+    char** s= malloc(sizeof (char *));
+
         printf("Here is the list of unsorted names: \n\n");
 
         // Keep on reading unlimited number of names until EOF (Ctrl + D) is reached
@@ -22,23 +20,17 @@ int main(){
             s[count] =  malloc(strlen(buff)+1);
             // Step 2: Copy into the allocated memory
             strcpy(s[count], buff);
+
             //Step 3: resize the array of pointers pointed to by 's' to increase its size for the next pointer
             s = realloc(s, sizeof (char*)*(count+2));
+//            As a debug for the program to actually run without EOF
+            if (count == 4){
+                break;
             }
-
-
-
-       // EOF reached. Now count the number of strings read
-
+            }
         printf("\nCount is %d\n\n", count);
-
-       // Now sort string using sortString function
-       // Step 4: implement sortString function for the above-mentioned function declaration
        sortString(s, count);
-
-       // Step 5: print the list of sorted names.
        printArray(s, count);
-       // Step 6:free the allocated memory.
        free(s);
 
         return 0;
@@ -71,5 +63,9 @@ void printArray(char *s[], int count){
         printf("%s", s[i]);
     }
 }
-
+//Tom Hanks
+//Tom Cruise
+//Richard Gere
+//Daniel Craig
+//Harrison Ford
 
