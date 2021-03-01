@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* Author: Kaimana Kahalekai
+ * Professor: Shamima Yasmin
+ * Course: CSCD 240
+ * Due Date: 03/01/2021
+ */
+
 void sortString(char *s[], int count);
 void printArray(char *s[], int count);
 void swapStrings(char** a, char** b);
@@ -36,6 +42,12 @@ int main() {
     return 0;
 }
 
+/** sortString void
+ * Sorts the the string based on comparison if string am is greater than string b
+ * @param s
+ * @param count
+ */
+
 void sortString(char *s[], int count){
 
     if(s == NULL || count == 0){
@@ -51,12 +63,24 @@ void sortString(char *s[], int count){
     }
 
 }
+
+/** swapString void
+ * Swaps the strings a with b,
+ * @param a
+ * @param b
+ */
+
 void swapStrings(char** a, char** b) {
     char *temp = *a;
     *a = *b;
     *b = temp;
 }
 
+/** printArray void
+ * Prints the array to the screen
+ * @param s
+ * @param count
+ */
 void printArray(char *s[], int count){
     printf("Here is the list of sorted names: \n");
     for(int i = 0; i < count; i++){
