@@ -10,7 +10,7 @@ int main() {
     char buff[BUFSIZ];
     int count = 0;
     // 's' is a pointer to a char pointer, initially 's' is allocated storage for one char pointer
-    char **s = malloc(1 * sizeof(char *));
+    char **s = malloc(sizeof(char *));
 
     printf("Here is the list of unsorted names: \n\n");
 
@@ -24,14 +24,11 @@ int main() {
         //Step 3: resize the array of pointers pointed to by 's' to increase its size for the next pointer
         s = realloc(s, sizeof(char *) * (count + 2));
 //      As a debug for the program to actually run without EOF
-        if (count == 4) {
-            break;
-        }
     }
     printf("\nCount is %d\n\n", count);
     sortString(s, count);
     printArray(s, count);
-    for ( i = 0; i < count; i++){
+    for (i = 0; i < count; i++){
         free(s[i]);
     }
     free(s);
